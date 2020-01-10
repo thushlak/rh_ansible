@@ -1,0 +1,14 @@
+---
+- name: HTTPD is Insatlled and Enabled 
+  hosts: web
+  tasks:
+    - name: httpd Is Installed
+      yum:
+        name: httpd
+        state: latest
+    - name: httpd is enabled
+      service:
+        name: httpd
+        enabled: true
+        state: started 
+

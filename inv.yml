@@ -3,6 +3,8 @@ gb-reh-thulakpoc1.arm.com
 gb-reh-thulakpoc2.arm.com
 [ubuntu]
 gb-cam-thulak01.cambridge.arm.com
+[web]
+gb-reh-thulakpoc2.arm.com
 [unix-childs:children]
 redhat
 ubuntu
