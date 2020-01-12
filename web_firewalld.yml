@@ -1,0 +1,28 @@
+---
+- name: Enable Intranet Services
+  hosts: gb-reh-thulakpoc1.arm.com
+  tasks:
+   - name: Latest version Of the HTTPD and FIREWALLD INstalled
+     yum:
+      name:
+       - httpd
+       - firewalld
+      state: latest
+   - name: Firewalld is Enabled and Active
+     service:
+      name: firewalld
+      enabled: true
+      state: started 
+
+   - name: Firewalld Permits HTTP Service 
+     firewalld:
+      service: http
+      permanent: true
+      state: enabled
+      immediate: yes 
+ 
+   - name: HTTPD Is Enabled and Running 
+     service: 
+       name: httpd
+       enabled: true
+       state: started 
